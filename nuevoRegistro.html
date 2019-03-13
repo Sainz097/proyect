@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registro | ToursChiapas</title>
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximun-scale=3.0">
+    <link rel="stylesheet" href="css/nuevoEstilo.css">
+    <link rel="stylesheet" href="css/estiloregistro.css">
+    <link href="https://file.myfontastic.com/icYzCNucaJfax2qjjnWb8H/icons.css" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container container--flex">
+            <div class="logo-container column column--50">
+                <h1 class="logo">ToursChiapas</h1>
+            </div>
+            <div class="main-header__contactInfo column column--50">
+                <p class="main-header__contactInfo__phone">
+                    <span class="icon-phone">Tel. 961-159-3534</span>
+                </p>
+                <p class="main-header__contactInfo__address">
+                    <span class="icon-ubicacion">Calle 12 de octubre- Col. Santa Maria</span>
+                </p>
+            </div>
+        </div>
+    </header>
+    <nav class="main-nav">
+        <div class="container container--flex">
+            <span class="icon-menu" id="btnmenu"></span>
+            <ul class="menu" id="menu">
+                <li class="menu__item"><a href="nuevoIndex.html" class="menu__link menu__link--select">Inicio</a></li>
+                <li class="menu__item"><a href="paquete.html" class="menu__link">Paquetes</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="banner">
+        <img src="img/San.jpg" alt="" class="banner__img">
+        <div class="banner__content">Llena los campos para terminar el proceso</div>
+    </section>
+    <main class="main">
+        <h1></h1>
+        <form action="Referenciado.php" method="POST" class="form-register">
+          <div class="container-inputs">
+            <input type="text"  id="name" name="nombre" placeholder="Nombre(s)" class="input-48">
+            <input type="text"  id="surname" name="apellido" placeholder="Apellidos" class="input-48">
+            <input type="text"  id="age" name="edad" placeholder="Edad" class="input-48">
+            <input type="text"  id="address" name="direccion" placeholder="Dirección" class="input-48">
+            <input type="text"  id="phone" name="telefono" placeholder="Telefono" class="input-48">
+            <input type="email" id="email" name="correo" placeholder="Correo" class="input-100">
+            <input type="text" id="quantity" name="cantidad" placeholder="Cantidad de Lugares" class="input-48">
+            <a class="btn" input type="button" placeholder="Cancelar" href="nuevoIndex.html">Cancelar</a>
+            <input type="submit" value="Continuar" class="btn" onclick="validar()">
+          </div>
+        </form>
+    </main>
+    <footer class="main-footer">
+        <div class="container container--flex">
+            <div class="column column--33">
+                <h2 class="column__title">Visitanos</h2>
+                <p class="column__txt">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum alias assumenda neque, facere at accusantium recusandae eligendi deserunt delectus cumque repellendus culpa minima ullam, libero doloremque molestias nihil, reiciendis voluptatem.</p>
+            </div>
+            <div class="column column--33">
+                <h2 class="column__title">Contáctanos</h2>
+                <p class="column__txt">Calle 12 de octubre- Col. Santa Maria</p>
+                <p class="column__txt">Tel. 961-159-3534</p>
+            </div>
+            <div class="column column--33">
+                <h2 class="column__title">Siguenos en nuestras redes</h2>
+                <p class="column__txt"><a href="" class="icon-facebook">Facebook</a></p>
+                <p class="column__txt"><a href="" class="icon-twitter">Twitter</a></p>
+                <p class="column__txt"><a href="" class="icon-ubicacion">Calle 12 de octubre- Col. Santa Maria</a></p>
+            </div>
+            <p class="copy"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Nos comprometemos</span>   <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">a no dar informacion de su compra, asi como tampoco mal uso de la informacion que se muestre,</span> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Atribución-NoComercial-Compartir Igual 4.0 Internacional</a></p>
+        </div>
+    </footer>
+</body>
+<script src="js/nuevomenu.js"></script>
+<script src="js/validar.js"></script>
+<!--<script>
+function validar(){
+    var nombre,apellidos, edad, direccion, telefono, correo, cantidad, expresion;
+    nombre=document.getElementById("name").value;
+    apellidos=document.getElementById("surname").value;
+    edad=document.getElementById("age").value;
+    direccion=document.getElementById("address").value;
+    telefono=document.getElementById("phone").value;
+    correo=document.getElementById("email").value;
+    cantidad=document.getElementById("cantidad").value;
+    
+if(nombre === "" || apellidos ==="" || edad ==="" || direccion === "" || telefono==="" || correo==="" || cantidad===""){
+        alert("Todos los campos son obligatorios");
+        return false;
+    }
+    else if(nombre.lenght>15){
+        alert("El nombre es muy largo");
+        return false;
+    }
+    else if(apellidos.lenght>12){
+        alert("Los apellidos son muy largos");
+        return false;
+    }
+    else if(edad.lenght>3){
+        alert("La edad es muy larga");
+        return false;
+    }
+    else if(isNaN(edad)){
+        alert("Dato no valido, ingrese la edad en valor numerico");
+        return false;
+    }
+    else if(direccion.lenght>50){
+        alert("La dirección es muy larga");
+        return false;
+    }
+    else if(telefono.lenght>10){
+        alert("El telefono es muy largo");
+        return false;
+    }
+    else if(isNaN(telefono)){
+        alert("Dato no valido, ingrese el telefono en valor numerico");
+        return false;
+    }
+    else if(correo.lenght>40){
+        alert("El correo es muy largo");
+        return false;
+    }
+    else if(cantidad<3){
+        alert("Solo puede seleccionar como maximo 2 cupos");
+        return false;
+    }
+}
+</script>-->
+</html>
